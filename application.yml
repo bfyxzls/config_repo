@@ -1,0 +1,44 @@
+spring:
+  cloud.config:
+    allowOverride: true
+    overrideNone: false
+    overrideSystemProperties: false
+  profiles.active: development
+
+management:
+  context-path: /manage
+  security.enabled: false
+  health:
+    diskspace.enabled: false
+  endpoint:
+    health.enabled: true
+  endpoints:
+    web:
+      path-mapping.health: status
+      base-path: /manage #since spring boot 2.0.0 M6
+      expose: info,status,health
+eureka:
+  instance:
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/${management.endpoints.web.path-mapping.health}
+    preferIpAddress: false
+  client:
+    fetchRegistry: true
+    registryFetchIntervalSeconds: 5
+    healthcheck:
+      enabled: true
+---
+spring:
+  profiles: dev-eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:6761/eureka
+
+---
+spring:
+  profiles: devops-eureka
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureserver:6761/eureka

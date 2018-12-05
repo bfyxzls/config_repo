@@ -1,0 +1,5 @@
+auth.name: zzl
+---
+spring:
+  profiles: development
+  profiles.include: dev-eureka

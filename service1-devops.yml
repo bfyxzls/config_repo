@@ -1,0 +1,5 @@
+auth.name: zzl开发服务1
+---
+spring:
+  profiles: devops
+  profiles.include: devops-eureka
