@@ -4,17 +4,6 @@ spring:
     overrideNone: false
     overrideSystemProperties: false
   profiles.active: development
-
-eureka:
-  instance:
-    statusPageUrlPath: /manage/info
-    healthCheckUrlPath: /manage/status
-    preferIpAddress: false
-  client:
-    fetchRegistry: true
-    registryFetchIntervalSeconds: 5
-    healthcheck:
-      enabled: true
 ---
 spring:
   profiles: dev-eureka
