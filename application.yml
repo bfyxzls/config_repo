@@ -5,22 +5,10 @@ spring:
     overrideSystemProperties: false
   profiles.active: development
 
-management:
-  context-path: /manage
-  security.enabled: false
-  health:
-    diskspace.enabled: false
-  endpoint:
-    health.enabled: true
-  endpoints:
-    web:
-      path-mapping.health: status
-      base-path: /manage #since spring boot 2.0.0 M6
-      expose: info,status,health
 eureka:
   instance:
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/${management.endpoints.web.path-mapping.health}
+    statusPageUrlPath: /manage/info
+    healthCheckUrlPath: /manage/status
     preferIpAddress: false
   client:
     fetchRegistry: true
