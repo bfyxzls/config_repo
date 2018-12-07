@@ -14,7 +14,7 @@ eureka:
 
 ---
 spring:
-  profiles: devops-eureka
+  profiles: svt-eureka
 eureka:
   client:
     serviceUrl:

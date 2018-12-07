@@ -1,0 +1,3 @@
+auth.name: zzl开发服务2
+spring:
+  profiles.include: svt-eureka
