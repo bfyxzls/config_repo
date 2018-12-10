@@ -5,6 +5,10 @@ spring:
     overrideSystemProperties: false
   profiles.active: development
 eureka.instance.preferIpAddress: true #以ip的方式注册到eurekaserver
+feign.okhttp.enabled: true
+feign.hystrix.enabled: false #索性禁用Feign的Hystrix
+
+
 ---
 spring:
   profiles: dev-eureka
