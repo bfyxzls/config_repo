@@ -1,3 +1,8 @@
 auth.name: zzlservice1
 spring:
   profiles.include: dev-eureka
+
+eureka:
+  instance:
+    preferIpAddress: true
+    instance-id: 192.168.170.30:6761
