@@ -4,6 +4,7 @@ spring:
     overrideNone: false
     overrideSystemProperties: false
   profiles.active: development
+eureka.instance.preferIpAddress: true #以ip的方式注册到eurekaserver
 ---
 spring:
   profiles: dev-eureka
