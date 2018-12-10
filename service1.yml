@@ -2,7 +2,3 @@ auth.name: zzlservice1
 server.port: 7788
 spring:
     profiles.include: dev-eureka
-
-eureka:
-  instance:
-    preferIpAddress: true

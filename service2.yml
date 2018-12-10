@@ -2,10 +2,3 @@ auth.name: zzlservice2
 server.port: 7789
 spring:
   profiles.include: dev-eureka
-  application:
-    name: service2
-
-eureka:
-  instance:
-    preferIpAddress: true
-    instance-id: 192.168.170.30:${spring.application.name}:${server.port}
