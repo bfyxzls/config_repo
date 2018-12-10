@@ -1,4 +1,6 @@
 auth.name: zzlservice2
 server.port: 7789
+management.server.port: 17789
+
 spring:
     profiles.include: dev-eureka
