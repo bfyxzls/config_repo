@@ -4,6 +4,3 @@ spring:
   profiles.include: dev-eureka
   application:
     name: service2
-eureka:
-  instance:
-    preferIpAddress: true
