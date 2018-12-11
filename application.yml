@@ -26,6 +26,7 @@ eureka:
     statusPageUrlPath: ${management.context-path}/info
     healthCheckUrlPath: ${management.context-path}/${management.endpoints.web.path-mapping.health}
     preferIpAddress: false
+    hostname: localhost
   client:
     fetchRegistry: true
     registryFetchIntervalSeconds: 5
