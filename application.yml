@@ -4,11 +4,11 @@ spring:
     overrideNone: false
     overrideSystemProperties: false
   profiles.active: development
-
+management.contextPath: /manage #从新设置监控检查的地址，默认为/actuator
 eureka:
   instance:
-    statusPageUrlPath: /manage/info
-    healthCheckUrlPath: /manage/status
+    statusPageUrlPath: ${management.contextPath}/info
+    healthCheckUrlPath: ${management.contextPath}/status
     preferIpAddress: false
   client:
     fetchRegistry: true
