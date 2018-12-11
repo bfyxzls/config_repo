@@ -1,8 +1,11 @@
 spring:
+  config:
+    name: ${spring.application.name}
   cloud.config:
     allowOverride: true
     overrideNone: false
     overrideSystemProperties: false
+    name: ${spring.application.name}
   profiles.active: development
 
 management:
