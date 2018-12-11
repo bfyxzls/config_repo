@@ -4,11 +4,24 @@ spring:
     overrideNone: false
     overrideSystemProperties: false
   profiles.active: development
-management.contextPath: /manage #从新设置监控检查的地址，默认为/actuator
+
+management:
+  context-path: /manage #从新设置监控检查的地址，默认为/actuator
+  security.enabled: false
+  health:
+    diskspace.enabled: false
+  endpoint:
+    health.enabled: true
+  endpoints:
+    web:
+      path-mapping.health: status
+      base-path: /manage #since spring boot 2.0.0 M6
+      expose: info,status,health
+
 eureka:
   instance:
-    statusPageUrlPath: ${management.contextPath}/info
-    healthCheckUrlPath: ${management.contextPath}/status
+    statusPageUrlPath: ${management.context-path}/info
+    healthCheckUrlPath: ${management.context-path}/${management.endpoints.web.path-mapping.health}
     preferIpAddress: false
   client:
     fetchRegistry: true
@@ -17,8 +30,6 @@ eureka:
       enabled: true
 
 feign.okhttp.enabled: true
-feign.hystrix.enabled: false #索性禁用Feign的Hystrix
-
 
 ---
 spring:
