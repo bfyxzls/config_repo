@@ -16,8 +16,6 @@ management:
 
 eureka:
   instance:
-    statusPageUrlPath: ${management.context-path}/info
-    healthCheckUrlPath: ${management.context-path}/${management.endpoints.web.path-mapping.health}
     preferIpAddress: false
     hostname: 192.168.170.54
   client:
