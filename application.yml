@@ -9,17 +9,10 @@ spring:
   profiles.active: development
 
 management:
-  context-path: /manage #从新设置监控检查的地址，默认为/actuator
-  security.enabled: false
-  health:
-    diskspace.enabled: false
-  endpoint:
-    health.enabled: true
   endpoints:
     web:
-      path-mapping.health: status
-      base-path: /manage #since spring boot 2.0.0 M6
-      expose: info,status,health
+      exposure:
+        include: bus-refresh
 
 eureka:
   instance:
