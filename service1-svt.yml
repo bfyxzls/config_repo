@@ -1,3 +1,3 @@
-auth.name: zzl开发服务1更新了
+auth.name: zzl开发服务1更新了再次更新
 spring:
   profiles.include: svt-eureka
